@@ -1,0 +1,30 @@
+
+# Data — never commit raw or processed data
+data/
+
+# Secrets — never commit credentials
+.env
+*.env
+conf/local/
+*.json
+*service_account*
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+*.egg-info/
+dist/
+build/
+
+# Logs
+logs/
+*.log
+
+# IDE
+.vscode/settings.json
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db

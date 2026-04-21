@@ -1,0 +1,45 @@
+# RAW LAYER (Bronze)
+raw_stock_prices:
+  type: pandas.ParquetDataset
+  filepath: data/01_raw/stock_prices.parquet
+
+raw_macro_indicators:
+  type: pandas.ParquetDataset
+  filepath: data/01_raw/macro_indicators.parquet
+
+# INTERMEDIATE LAYER (Silver)
+int_stock_prices:
+  type: pandas.ParquetDataset
+  filepath: data/02_intermediate/stock_prices.parquet
+
+int_macro_indicators:
+  type: pandas.ParquetDataset
+  filepath: data/02_intermediate/macro_indicators.parquet
+
+# PRIMARY LAYER (Gold)
+prm_market_data:
+  type: pandas.ParquetDataset
+  filepath: data/03_primary/market_data.parquet
+
+# FEATURE LAYER
+feat_market_data:
+  type: pandas.ParquetDataset
+  filepath: data/04_feature/market_data_features.parquet
+
+# STAR SCHEMA TABLES
+fact_prices:
+  type: pandas.ParquetDataset
+  filepath: data/05_model_input/fact_prices.parquet
+
+dim_ticker:
+  type: pandas.ParquetDataset
+  filepath: data/05_model_input/dim_ticker.parquet
+
+dim_date:
+  type: pandas.ParquetDataset
+  filepath: data/05_model_input/dim_date.parquet
+
+dim_macro:
+  type: pandas.ParquetDataset
+  filepath: data/05_model_input/dim_macro.parquet
+

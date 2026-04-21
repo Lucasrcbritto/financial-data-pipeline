@@ -1,0 +1,11 @@
+services:
+  pipeline:
+    build: .
+    environment:
+      - GCP_PROJECT_ID=${GCP_PROJECT_ID}
+      - GOOGLE_APPLICATION_CREDENTIALS=/app/secrets/gcp-key.json
+    volumes:
+      - ./data:/app/data
+      - ./conf/local:/app/conf/local
+      - ./secrets:/app/secrets
+    command: ["uv", "run", "kedro", "run"]
