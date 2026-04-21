@@ -32,7 +32,9 @@ feature_engineering:
   annualization_factor: 252
 
 bigquery:
-  project_id: "${GCP_PROJECT_ID}"
+
+
+  project_id: "placeholder-project"
   dataset: "financial_data"
   tables:
     fact_prices: "fact_prices"
