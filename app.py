@@ -65,12 +65,17 @@ st.line_chart(filtered.set_index("date")[["rsi_14"]])
 
 # Macro overlay
 st.subheader("Macro Indicators")
-macro_cols = [c for c in filtered.columns if c in ["FEDFUNDS", "UNRATE", "CPIAUCSL", "T10Y2Y"]]
+macro_indicators = ["FEDFUNDS", "UNRATE", "CPIAUCSL", "T10Y2Y"]
+macro_cols = [c for c in filtered.columns if c in macro_indicators]
 if macro_cols:
-    selected_macro = st.multiselect("Select indicators", macro_cols, default=macro_cols[:2])
+    selected_macro = st.multiselect(
+        "Select indicators", macro_cols, default=macro_cols[:2]
+    )
     if selected_macro:
         macro_data = filtered.set_index("date")[selected_macro].dropna()
-        macro_normalized = (macro_data - macro_data.min()) / (macro_data.max() - macro_data.min()) * 100
+        min_val = macro_data.min()
+        max_val = macro_data.max()
+        macro_normalized = (macro_data - min_val) / (max_val - min_val) * 100
         st.caption("Indicators normalized to 0–100 scale for comparability")
         st.line_chart(macro_normalized)
 

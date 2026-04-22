@@ -5,7 +5,9 @@ description = "Production-grade financial data pipeline: Kedro + GCP + star sche
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
+    "kedro-viz>=12.3.0",
     "setuptools>=82.0.1",
+    "streamlit>=1.56.0",
 ]
 
 [build-system]
