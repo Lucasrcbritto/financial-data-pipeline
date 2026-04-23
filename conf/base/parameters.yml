@@ -31,13 +31,10 @@ feature_engineering:
     - 63
   annualization_factor: 252
 
-bigquery:
-
-
-  project_id: "placeholder-project"
-  dataset: "financial_data"
+star_schema:
+  output_path: "data/05_model_input"
   tables:
-    fact_prices: "fact_prices"
-    dim_ticker: "dim_ticker"
-    dim_date: "dim_date"
-    dim_macro: "dim_macro"
+    - fact_prices
+    - dim_ticker
+    - dim_date
+    - dim_macro

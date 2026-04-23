@@ -1,7 +1,7 @@
 import pandas as pd
 import pytest
 
-from financial_data_pipeline.pipelines.bigquery_load.nodes import (
+from financial_data_pipeline.pipelines.star_schema.nodes import (
     build_dim_date,
     build_dim_macro,
     build_dim_ticker,
